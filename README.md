@@ -2,6 +2,8 @@
 
 This is the backend API for a full-stack blogging application, built using **Django** and **Django REST Framework (DRF)**. It provides a RESTful API to handle blog posts, user authentication, and other core functionalities of the blog.
 
+**Live API URL**: [https://inkspire-api.onrender.com](https://inkspire-api.onrender.com)
+
 ---
 
 ## Features
