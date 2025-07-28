@@ -66,6 +66,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://192.168.29.121:5173",
+    "https://inkspire-p7wi.onrender.com"
 ]
 
 ROOT_URLCONF = 'blog_app.urls'
