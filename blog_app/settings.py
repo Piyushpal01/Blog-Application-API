@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-kt=hxxjh8skmbm_ycz6j56!y9q&=)wqea(pi03f^dr8o%7#c@0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://inkspire-api-o72g.onrender.com/']
+ALLOWED_HOSTS = ['https://inkspire-api-o72g.onrender.com']
 
 
 # Application definition
