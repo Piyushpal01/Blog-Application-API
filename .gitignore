@@ -12,8 +12,6 @@ env/
 *.pyc
 __pycache__/
 
-# Media files (upload folder)
-media/
 
 # Logs
 *.log
