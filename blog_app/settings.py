@@ -48,12 +48,12 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # cors header middleware
+    "corsheaders.middleware.CorsMiddleware",
+    
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",   # # WhiteNoise Middleware
     'django.contrib.sessions.middleware.SessionMiddleware',
-    
-    # cors header middleware
-    "corsheaders.middleware.CorsMiddleware",
 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -63,11 +63,15 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://192.168.29.121:5173",
-    "https://inkspire-p7wi.onrender.com"
-]
+if os.getenv('RENDER'):
+    CORS_ALLOWED_ORIGINS = [
+        "https://inkspire-p7wi.onrender.com",
+    ]
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
 
 ROOT_URLCONF = 'blog_app.urls'
 
