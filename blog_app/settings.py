@@ -62,18 +62,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS config
-CORS_ALLOW_CREDENTIALS = True
-
-if not DEBUG:
-    CORS_ALLOWED_ORIGINS = [
-        "https://inkspire-p7wi.onrender.com",
-    ]
-else:
-    CORS_ALLOWED_ORIGINS = [
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ]
+# ✅ Allow all origins
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'blog_app.urls'
 
