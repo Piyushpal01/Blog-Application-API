@@ -24,3 +24,5 @@ media/
 
 # Django migrations folder (if you want to ignore migrations)
 migrations/
+
+staticfiles/
