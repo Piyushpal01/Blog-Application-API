@@ -63,7 +63,7 @@ MIDDLEWARE = [
 ]
 
 
-if os.getenv('RENDER'):
+if not DEBUG:
     CORS_ALLOWED_ORIGINS = [
         "https://inkspire-p7wi.onrender.com",
     ]
