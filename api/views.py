@@ -21,7 +21,14 @@ class BlogListPagination(PageNumberPagination):
 def blog_list(req):
     blogs = Blog.objects.all()
     
-    # paginating blogs
+    # Filter by category if provided in query params
+    category = req.query_params.get('category')
+    if category:
+        blogs = blogs.filter(category__iexact=category)
+    else:
+        blogs = Blog.objects.all()
+
+    # Paginate the (filtered) blogs
     paginator = BlogListPagination()    # Initialize custom pagination class
     paginated_blogs = paginator.paginate_queryset(blogs, req)   # Apply pagination to the blog queryset using request
     
@@ -107,6 +114,7 @@ def get_username(req):
     username = user.username
     return Response({"username": username})
 
+# get user's userinfo
 @api_view(['GET'])
 def get_userinfo(req, username):
     User = get_user_model()
@@ -114,6 +122,7 @@ def get_userinfo(req, username):
     serializer = UserInfoSerializer(user)
     return Response(serializer.data)
 
+# get user
 @api_view(['GET'])
 def get_user(req, pk):
     User = get_user_model()

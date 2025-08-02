@@ -36,7 +36,7 @@ class SimpleAuthorSerializer(serializers.ModelSerializer):
         fields=["id", "username", "first_name", "last_name", "profile_pic"]
 
 class BlogSerializer(serializers.ModelSerializer):
-    author = SimpleAuthorSerializer(read_only=True) # serializing the author object here
+    author = SimpleAuthorSerializer(read_only=True) # serializing the author object here., SimpleAuthorSerializer ek chhoti serializer hai jo sirf selected author details return karti hai (usually id, username etc).
 
     class Meta:
         model=Blog
