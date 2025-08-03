@@ -68,6 +68,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://inkspire-p7wi.onrender.com"
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://inkspire-p7wi.onrender.com"
+]
+
 ROOT_URLCONF = 'blog_app.urls'
 
 TEMPLATES = [
