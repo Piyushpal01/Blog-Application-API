@@ -19,14 +19,13 @@ class BlogListPagination(PageNumberPagination):
 # listing blogs and paginating it, having 3 blog articles per page
 @api_view(['GET'])
 def blog_list(req):
-    blogs = Blog.objects.all()
+    # Only get blogs that are not drafts and order by published date (newest first)
+    blogs = Blog.objects.filter(is_draft=False).order_by('-published_at')    #  Force newest published first
     
     # Filter by category if provided in query params
     category = req.query_params.get('category')
     if category:
         blogs = blogs.filter(category__iexact=category)
-    else:
-        blogs = Blog.objects.all()
 
     # Paginate the (filtered) blogs
     paginator = BlogListPagination()    # Initialize custom pagination class
